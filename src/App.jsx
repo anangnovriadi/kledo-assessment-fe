@@ -99,7 +99,7 @@ export default function App() {
   const BreadcrumbItem = ({ label, isActive }) => (
     <>
       <ChevronRight size={12} className="text-gray-300" />
-      <span className={isActive ? 'text-blue-600 font-semibold' : 'text-gray-500'}>{label}</span>
+      <span className={isActive ? 'text-blue-600' : 'text-gray-500'}>{label}</span>
     </>
   )
 
