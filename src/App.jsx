@@ -58,7 +58,6 @@ export default function App() {
 
   const handleReset = () => setSearchParams({})
 
-  // ── Reusable select wrapper ──────────────────────────────────────────────
   const SelectField = ({ label, name, icon: Icon, value, onChange, disabled, children }) => (
     <div>
       <label className="block text-xs font-medium uppercase text-gray-700 mb-2">
@@ -88,7 +87,6 @@ export default function App() {
     </div>
   )
 
-  // ── Result item ──────────────────────────────────────────────────────────
   const ResultItem = ({ label, value }) => (
     <div className="text-center">
       <p className="text-[10px] text-blue-500 uppercase tracking-widest mb-1">{label}</p>
@@ -98,7 +96,6 @@ export default function App() {
     </div>
   )
 
-  // ── Breadcrumb item ──────────────────────────────────────────────────────
   const BreadcrumbItem = ({ label, isActive }) => (
     <>
       <ChevronRight size={12} className="text-gray-300" />
@@ -108,10 +105,8 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex bg-gray-50 text-gray-800">
-
-      {/* ── Sidebar ── */}
       <aside className="w-72 p-6 bg-white border-r flex flex-col">
-        <h2 className="text-lg font-bold flex items-center gap-2 mb-5">
+        <h2 className="text-lg font-bold flex items-center gap-2 mb-10">
           <div className="bg-blue-100 p-1 rounded-xl">
             <Earth className="text-blue-600" size={18} />
           </div>
@@ -120,7 +115,7 @@ export default function App() {
 
         <p className="text-gray-400 text-[10px] uppercase mb-6">Filter Wilayah</p>
 
-        <div className="space-y-6 flex-1">
+        <div className="space-y-6">
           <SelectField
             label="Provinsi"
             name="province"
@@ -163,7 +158,7 @@ export default function App() {
           </SelectField>
         </div>
 
-        <div className="pt-6">
+        <div className="pt-10">
           <button
             onClick={handleReset}
             disabled={!hasSelection}
@@ -178,10 +173,7 @@ export default function App() {
         </div>
       </aside>
 
-      {/* ── Main ── */}
       <div className="flex-1 flex flex-col">
-
-        {/* Breadcrumb */}
         <header className="bg-white border-b px-10 py-5">
           <nav className="text-sm flex items-center gap-2">
             <span className={!selectedProvince ? 'text-blue-600 font-semibold' : 'text-gray-500'}>
@@ -198,8 +190,6 @@ export default function App() {
             )}
           </nav>
         </header>
-
-        {/* Result */}
         <main className="flex-1 flex items-center justify-center px-10">
           {loading ? (
             <Loader2 size={28} className="animate-spin text-blue-400" />
