@@ -176,7 +176,7 @@ export default function App() {
       <div className="flex-1 flex flex-col">
         <header className="bg-white border-b px-10 py-5">
           <nav className="text-sm flex items-center gap-2">
-            <span className={!selectedProvince ? 'text-blue-600 font-semibold' : 'text-gray-500'}>
+            <span className={!selectedProvince ? 'text-blue-600' : 'text-gray-500'}>
               Indonesia
             </span>
             {selectedProvince && (
